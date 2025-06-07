@@ -85,6 +85,9 @@ function llenarCombo(selector, valores) {
 // Agregar
 function agregarRegistro(e) {
     e.preventDefault();
+
+    if (!confirm("¿Deseas guardar este nuevo registro?")) return;
+
     const datos = {
         patient_id: $('#inputIdPaciente').val(),
         age: parseInt($('#inputEdad').val()),
@@ -109,6 +112,7 @@ function agregarRegistro(e) {
         contentType: 'application/json',
         data: JSON.stringify(datos),
         success: function () {
+            alert('Registro agregado exitosamente.');
             $('#modalAgregar').modal('hide');
             $('#formAgregar')[0].reset();
             cargarDatos();
@@ -147,6 +151,9 @@ $('#tablaDatos').on('click', '.btn-editar', function () {
 // Guardar Edición
 function editarRegistro(e) {
     e.preventDefault();
+
+    if (!confirm("¿Deseas guardar los cambios en este registro?")) return;
+
     const id = $('#editarId').val();
 
     const datos = {
@@ -172,6 +179,7 @@ function editarRegistro(e) {
         contentType: 'application/json',
         data: JSON.stringify(datos),
         success: function () {
+            alert('Registro actualizado exitosamente.');
             $('#modalEditar').modal('hide');
             cargarDatos();
         },
