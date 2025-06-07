@@ -89,7 +89,7 @@ function agregarRegistro(e) {
     if (!confirm("¿Deseas guardar este nuevo registro?")) return;
 
     const datos = {
-        patient_id: $('#inputIdPaciente').val(),
+        patient_id: $('#inputId').val(),
         age: parseInt($('#inputEdad').val()),
         gender: $('#addGenero').val() || "Other",
         country_region: $('#addPais').val(),
@@ -125,27 +125,28 @@ function agregarRegistro(e) {
 
 // Editar: Cargar datos en el modal
 $('#tablaDatos').on('click', '.btn-editar', function () {
-    const id = $(this).data('id');
+    const row = $(this).closest('tr');
+    const data = $('#tablaDatos').DataTable().row(row).data();
+    console.log(data);
 
-    $.get(`/api/get/cancer_data/${id}`, function (data) {
-        $('#editarId').val(data.Patient_ID);
-        $('#editarAge').val(data.Age);
-        $('#editarGenero').val(data.Gender);
-        $('#editarPais').val(data.Country);
-        $('#editarAnio').val(data.Year);
-        $('#editarGenetic').val(data.Genetic_Risk);
-        $('#editarPollution').val(data.Air_Pollution);
-        $('#editarAlcohol').val(data.Alcohol_Use);
-        $('#editarSmoking').val(data.Smoking);
-        $('#editarObesity').val(data.Obesity_Level);
-        $('#editarTipoCancer').val(data.Cancer_Type);
-        $('#editarStage').val(data.Cancer_Stage);
-        $('#editarCost').val(data.Treatment_Cost_USD);
-        $('#editarSurvival').val(data.Survival_Years);
-        $('#editarSeverity').val(data.Target_Severity_Score);
+    $('#editarId').val(data.id);
+    $('#editarAge').val(data.Age);
+    $('#editarGenero').val(data.Gender);
+    $('#editarPais').val(data.Country_Region);
+    $('#editarAnio').val(data.Year);
+    $('#editarGenetic').val(data.Genetic_Risk);
+    $('#editarPollution').val(data.Air_Pollution);
+    $('#editarAlcohol').val(data.Alcohol_Use);
+    $('#editarSmoking').val(data.Smoking);
+    $('#editarObesity').val(data.Obesity_Level);
+    $('#editarTipoCancer').val(data.Cancer_Type);
+    $('#editarStage').val(data.Cancer_Stage);
+    $('#editarCost').val(data.Treatment_Cost_USD);
+    $('#editarSurvival').val(data.Survival_Years);
+    $('#editarSeverity').val(data.Target_Severity_Score);
 
-        new bootstrap.Modal(document.getElementById('modalEditar')).show();
-    });
+    const modal = new bootstrap.Modal(document.getElementById('modalEditar'));
+    modal.show();
 });
 
 // Guardar Edición
@@ -181,6 +182,8 @@ function editarRegistro(e) {
         success: function () {
             alert('Registro actualizado exitosamente.');
             $('#modalEditar').modal('hide');
+            $('#formEditar')[0].reset();
+        
             cargarDatos();
         },
         error: function () {

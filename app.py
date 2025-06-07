@@ -136,7 +136,7 @@ def list_cancer():
 
 @app.route('/api/list_cancer_records')
 def api_list_cancer_records():
-    data = db_session.query(CancerRecord).limit(20000)
+    data = db_session.query(CancerRecord).limit(100)
     ##print(data)
     registros = []
     for r in data:
@@ -174,7 +174,7 @@ def obtener_opciones():
         "anios": sorted([a[0] for a in anios if a[0]]),
         "tipos_cancer": sorted([t[0] for t in tipos_cancer if t[0]])
     })
-#### Agregar regist
+#### Agregar registro
 @app.route('/add/cancer_data', methods=['POST'])
 def crear_cancer_record():
     data = request.json
