@@ -4,6 +4,7 @@
     <i class="fas fa-plus-circle me-1"></i> Agregar Paciente
   </button>
 </div>
+
 <!-- Modal Agregar -->
 <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl">
@@ -17,63 +18,63 @@
         <div class="modal-body row g-3">
           <div class="col-md-4">
             <label for="inputIdPaciente" class="form-label">ID del Paciente</label>
-            <input type="text" id="inputIdPaciente" name="patient_id" class="form-control" required>
+            <input type="text" id="inputIdPaciente" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputEdad" class="form-label">Edad</label>
-            <input type="number" id="inputEdad" name="age" class="form-control" required>
+            <input type="number" id="inputEdad" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputGenero" class="form-label">Género</label>
-            <input type="text" name="gender" id="inputGenero" class="form" required>
+            <input type="text" id="inputGenero" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputPais" class="form-label">País / Región</label>
-            <input type="text" name="country_region" id="inputPais" class="form-control" required>
+            <input type="text" id="inputPais" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputAnio" class="form-label">Año del Diagnóstico</label>
-            <input type="text" name="year" id="inputAnio" class="form-control" required>
+            <input type="number" id="inputAnio" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputGenetico" class="form-label">Riesgo Genético</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputGenetico" name="genetic_risk" class="form-control" required>
+            <input type="number" step="0.01" id="inputGenetico" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputAire" class="form-label">Contaminación del Aire</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputAire" name="air_pollution" class="form-control" required>
+            <input type="number" step="0.01" id="inputAire" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputAlcohol" class="form-label">Consumo de Alcohol</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputAlcohol" name="alcohol_use" class="form-control" required>
+            <input type="number" step="0.01" id="inputAlcohol" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputTabaco" class="form-label">Consumo de Tabaco</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputTabaco" name="smoking" class="form-control" required>
+            <input type="number" step="0.01" id="inputTabaco" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputObesidad" class="form-label">Nivel de Obesidad</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputObesidad" name="obesity_level" class="form-control" required>
+            <input type="number" step="0.01" id="inputObesidad" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputTipoCancer" class="form-label">Tipo de Cáncer</label>
-            <input type="text" name="cancer_type" id="inputTipoCancer" class="form-control" required>
+            <input type="text" id="inputTipoCancer" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputEtapa" class="form-label">Etapa del Cáncer</label>
-            <input type="text" id="inputEtapa" name="cancer_stage" class="form-control" required>
+            <input type="text" id="inputEtapa" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputCosto" class="form-label">Costo Tratamiento (USD)</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputCosto" name="treatment_cost_usd" class="form-control" required>
+            <input type="number" step="0.01" id="inputCosto" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputSupervivencia" class="form-label">Años de Supervivencia</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputSupervivencia" name="survival_years" class="form-control" required>
+            <input type="number" step="0.01" id="inputSupervivencia" class="form-control" required>
           </div>
           <div class="col-md-4">
             <label for="inputSeveridad" class="form-label">Puntaje de Severidad</label>
-            <input type="number" step="0.01" lang="es" inputmode="decimal" id="inputSeveridad" name="target_severity_score" class="form-control" required>
+            <input type="number" step="0.01" id="inputSeveridad" class="form-control" required>
           </div>
         </div>
 
